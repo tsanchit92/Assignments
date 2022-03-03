@@ -12,6 +12,7 @@ public class CalculatorController {
 	@PostMapping("/add")
 	public int add(@RequestBody Calculator cl)
 	{
+		
 		return cl.getA()+cl.getB();
 	}
 	

@@ -16,12 +16,16 @@ public class RestClient {
 	private static final String Subtract_api="http://localhost:8080/subtract" ;
 	private static final String Multiply_api="http://localhost:8080/multiply" ;
 	private static final String Divide_api="http://localhost:8080/divide" ; 
-	private static final String Root_api="http://localhost:8080/root/{c}" ;
+	private static final String Root_api="http://localhost:8080/root" ;
 	
 	static RestTemplate rt=new RestTemplate();	
 	 
 	public static void main(String[] args) {
-		
+		 RootApi();
+		 AddApi();
+		 SubtractApi();
+		 MultiplyApi();
+		 DivideApi();
 		
 	}
 	private static void AddApi()
@@ -33,9 +37,10 @@ public class RestClient {
 		 * ResponseEntity<String> result = rt.exchange(Add_api, HttpMethod.GET,
 		 * entity,String.class); System.out.println(result);
 		 *//* for get method */
+		
 		Calculator cl=new Calculator(5,5);
-		ResponseEntity<Calculator> res = rt.postForEntity(Add_api, cl,Calculator.class);
-		System.out.println(res.getStatusCodeValue());
+		ResponseEntity<Integer> res = rt.postForEntity(Add_api, cl,Integer.class);
+		System.out.println(res.getBody());
 	}
 	private static void SubtractApi()
 	{
@@ -46,9 +51,10 @@ public class RestClient {
 		 * ResponseEntity<String> result = rt.exchange(Add_api, HttpMethod.GET,
 		 * entity,String.class); System.out.println(result);
 		 *//* for get method */
+		
 		Calculator cl=new Calculator(5,5);
-		ResponseEntity<Calculator> res = rt.postForEntity(Subtract_api, cl,Calculator.class);
-		System.out.println(res.getStatusCodeValue());
+		ResponseEntity<Integer> res = rt.postForEntity(Subtract_api, cl,Integer.class);
+		System.out.println(res.getBody());
 	}
 	private static void MultiplyApi()
 	{
@@ -56,12 +62,12 @@ public class RestClient {
 		 * HttpHeaders headers=new HttpHeaders();
 		 * headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		 * HttpEntity<String> entity =new HttpEntity<>("parameters",headers);
-		 * ResponseEntity<String> result = rt.exchange(Add_api, HttpMethod.GET,
+		 * ResponseEntity<String> reult = rt.exchange(Add_api, HttpMethod.GET,
 		 * entity,String.class); System.out.println(result);
 		 *//* for get method */
 		Calculator cl=new Calculator(5,5);
-		ResponseEntity<Calculator> res = rt.postForEntity(Multiply_api, cl,Calculator.class);
-		System.out.println(res.getStatusCodeValue());
+		ResponseEntity<Integer> res = rt.postForEntity(Multiply_api, cl,Integer.class);
+		System.out.println(res.getBody());
 	}
 	private static void DivideApi()
 	{
@@ -73,8 +79,8 @@ public class RestClient {
 		 * entity,String.class); System.out.println(result);
 		 *//* for get method */
 		Calculator cl=new Calculator(5,5);
-		ResponseEntity<Calculator> res = rt.postForEntity(Divide_api, cl,Calculator.class);
-		System.out.println(res.getStatusCodeValue());
+		ResponseEntity<Integer> res = rt.postForEntity(Divide_api, cl,Integer.class);
+		System.out.println(res.getBody());
 	}
 	private static void RootApi()
 	{
@@ -85,8 +91,8 @@ public class RestClient {
 		 * ResponseEntity<String> result = rt.exchange(Add_api, HttpMethod.GET,
 		 * entity,String.class); System.out.println(result);
 		 *//* for get method */
-		Calculator cl=new Calculator(49.00);
-		ResponseEntity<Calculator> res = rt.postForEntity(Root_api, cl,Calculator.class);
-		System.out.println(res.getStatusCodeValue());
+		Calculator cl=new Calculator(81.00);
+		ResponseEntity<Double> res = rt.getForEntity(Root_api+"/"+cl.getC(), Double.class);
+		System.out.println(res.getBody());
 	}
 }

@@ -17,21 +17,23 @@ public class Calculator {
 		return b;
 	}
 
-	public Calculator(int a, int b, double c) {
-		super();
-		this.a = a;
-		this.b = b;
-		this.c = c;
-	}
+	
 
-	public Calculator(int a, int b) {
+	public Calculator(Integer a, Integer b) {
 		super();
 		this.a = a;
 		this.b = b;
 	}
 
 	public Calculator() {
+		
+	}
+
+	public Calculator(Integer a, Integer b, Double c) {
 		super();
+		this.a = a;
+		this.b = b;
+		this.c = c;
 	}
 
 	public void setB(int b) {
@@ -42,7 +44,7 @@ public class Calculator {
 		return c;
 	}
 
-	public Calculator(double c) {
+	public Calculator(Double c) {
 		super();
 		this.c = c;
 	}
