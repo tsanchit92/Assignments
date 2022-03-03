@@ -1,0 +1,32 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+				<bean id="Q1" class="Assignment2.Question">
+						<property name="questionId" value="1"/>
+						<property name="question" value="Types of Spring services"/>
+						
+							<property name="ans">
+								<list>
+									<value>Spring Core</value>
+									<value>Spring Jdbc</value>
+								</list>
+							</property>
+							<property name = "set_ans">
+								 <set>
+									   <value>Spring Boot</value>
+									   <value>Spring Security</value>
+									   <value>Spring Mvc</value>
+								 </set>
+							 </property>
+							 <property name = "m_ans">
+								<map>
+									 <entry key = "1" value = "Spring Cloud"/>
+									 <entry key = "2" value = "Spring Microservices 1"/>
+									 <entry key = "3" value = "Spring Microservices 2"/>
+									 <entry key = "4" value = "Spring Microservices 3"/>
+								 </map>
+							 </property>
+										
+									</bean>
+							
+</beans>
