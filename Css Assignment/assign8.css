@@ -1,0 +1,23 @@
+.p1
+        {
+
+        border-style:solid;
+         background-color:#E0FAFF;
+         border-width:thick;
+         }
+      .p2
+        {
+        border-style:solid;
+       background-color:#E0FAFF;
+       border-width:medium;
+        }
+      .p3
+        {
+       border-style:solid;
+       background-color:#E0FAFF;
+       border-width:thin;
+        }
+      .p4{
+        color: #afc7cc;
+        background-color:#E0FAFF;
+      }  
