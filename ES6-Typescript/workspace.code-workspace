@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\WebDev Prjct"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ES6-2015"
+	}
+}
